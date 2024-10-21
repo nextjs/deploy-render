@@ -13,7 +13,7 @@ This template can be used to deploy your Next.js application as a Node.js server
 1. Use the following values during creation
 
 - Runtime: Node
-- Build Command: `pnpm; pnpm build`
+- Build Command: `pnpm install; pnpm build`
 - Start Command: `pnpm start`
 
 For more information, see the Next.js [deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying#self-hosting).

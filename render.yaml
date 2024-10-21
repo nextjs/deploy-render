@@ -3,7 +3,7 @@ services:
     name: next-js
     runtime: node
     plan: starter
-    buildCommand: pnpm; pnpm build
+    buildCommand: pnpm install; pnpm build
     startCommand: pnpm start
     autoDeploy: false
     envVars:
