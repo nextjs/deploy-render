@@ -7,5 +7,5 @@ services:
     startCommand: pnpm start
     autoDeploy: false
     envVars:
-      - key: NODE_ENV
-        value: production
+      - key: PORT
+        value: 10000
