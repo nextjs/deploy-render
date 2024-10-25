@@ -11,7 +11,9 @@ This template can be used to deploy your Next.js application as a Node.js server
 1. Fork this repo.
 1. In your new repo, click the button below.
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+<a href="https://render.com/deploy" referrerpolicy="no-referrer-when-downgrade" rel="nofollow">
+  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" />
+</a>
 
 Note: The button uses the `render.yaml` file in this repo to deploy your app. For more information about `render.yaml`, see [Render's guide](https://docs.render.com/infrastructure-as-code).
 
