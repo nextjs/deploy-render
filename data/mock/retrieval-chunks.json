@@ -1,0 +1,41 @@
+[
+  {
+    "chunkId": "TEST-CHK-001",
+    "recordId": "TEST-REC-001",
+    "sourceId": "TEST-SOURCE-TERMINOLOGY",
+    "sourceType": "terminology",
+    "text": "TEST FIXTURE ONLY: Tawhid is the term used for affirming the oneness of Allah.",
+    "language": "en",
+    "locator": "TEST-FIXTURE/TERMINOLOGY/001",
+    "url": "https://example.invalid/test-fixture/terminology/001",
+    "conceptIds": ["TEST-CONCEPT-TAWHID"],
+    "chunkIndex": 0,
+    "metadata": { "sourceName": "TEST FIXTURE ONLY" }
+  },
+  {
+    "chunkId": "TEST-CHK-002",
+    "recordId": "TEST-REC-002",
+    "sourceId": "TEST-SOURCE-QURAN",
+    "sourceType": "quran",
+    "text": "TEST FIXTURE ONLY: Quran evidence fixture about prayer and worship.",
+    "language": "en",
+    "locator": "TEST-FIXTURE/QURAN/002",
+    "url": "https://example.invalid/test-fixture/quran/002",
+    "conceptIds": ["TEST-CONCEPT-PRAYER"],
+    "chunkIndex": 0,
+    "metadata": { "sourceName": "TEST FIXTURE ONLY" }
+  },
+  {
+    "chunkId": "TEST-CHK-003",
+    "recordId": "TEST-REC-003",
+    "sourceId": "TEST-SOURCE-HADITH",
+    "sourceType": "hadith",
+    "text": "TEST FIXTURE ONLY: Hadith evidence fixture about good character.",
+    "language": "en",
+    "locator": "TEST-FIXTURE/HADITH/003 | grading=fixture-only",
+    "url": "https://example.invalid/test-fixture/hadith/003",
+    "conceptIds": ["TEST-CONCEPT-CHARACTER"],
+    "chunkIndex": 0,
+    "metadata": { "sourceName": "TEST FIXTURE ONLY" }
+  }
+]

@@ -1,0 +1,31 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { PipelineReport } from "./pipeline-report";
+const directory = fs.mkdtempSync(path.join(os.tmpdir(), "rashid-report-"));
+try {
+  const report = new PipelineReport(directory, ["TEST_SECRET"]);
+  report.record("preflight", { ready: true });
+  report.startCase("Arabic case", "لماذا يصوم المسلمون؟", "ok");
+  report.record("L writer:result", JSON.stringify({ text: "نص عربي سليم", example: "<script>alert(1)</script>" }));
+  report.record("final-response", { status: "ok", message: "رد عربي واضح" });
+  report.record("PASS", { status: "ok" });
+  report.startCase("Failure case", "سؤال آخر", "ok");
+  report.record("FAIL", { lastStage: "M verifier:start", message: "\u001b[31mTEST_SECRET bad output\u001b[39m" });
+  report.finish("failed");
+  const saved = JSON.parse(fs.readFileSync(report.jsonPath, "utf8"));
+  assert.equal(saved.status, "failed");
+  assert.equal(saved.cases[0].outcome, "passed");
+  assert.equal(saved.cases[1].outcome, "failed");
+  assert.equal(saved.cases[1].events[0].data.message, "[REDACTED] bad output");
+  const html = fs.readFileSync(report.htmlPath, "utf8");
+  assert.ok(html.includes('dir="rtl"') && html.includes('dir="auto"') && html.includes('charset="utf-8"'));
+  assert.ok(html.includes("رد عربي واضح") && html.includes("نص عربي سليم"));
+  assert.ok(html.includes("&lt;script&gt;"));
+  assert.ok(!html.includes("<script>") && !html.includes("TEST_SECRET") && !html.includes("\u001b"));
+  report.finish("error", "Setup failed: TEST_SECRET");
+  assert.equal(JSON.parse(fs.readFileSync(report.jsonPath, "utf8")).fatalError, "Setup failed: [REDACTED]");
+  assert.ok(fs.readFileSync(report.htmlPath, "utf8").includes("رد عربي واضح"));
+  console.log("Pipeline report tests passed: Arabic direction, saved outcomes, partial errors, escaped HTML, secret redaction.");
+} finally { fs.rmSync(directory, { recursive: true, force: true }); }

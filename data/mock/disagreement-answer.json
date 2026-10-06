@@ -1,0 +1,52 @@
+{
+  "responseId": "resp_demo_disagreement",
+  "conversationId": "conv_demo_001",
+  "status": "ok",
+  "message": "هذه حالة تجريبية لعرض واجهة الخلاف العلمي.",
+  "contentLevel": "C",
+  "route": "DISAGREEMENT",
+  "citations": [],
+  "claims": [],
+  "dialogueState": {
+    "mainTopic": "demo disagreement",
+    "points": [],
+    "activePointId": null,
+    "resolvedPointIds": [],
+    "openPointIds": [],
+    "disputedPointIds": [
+      "P-D1"
+    ],
+    "evidenceUsed": []
+  },
+  "discussionMap": {
+    "nodes": [],
+    "edges": []
+  },
+  "disagreement": {
+    "agreementPoints": [
+      "نقطة اتفاق تجريبية"
+    ],
+    "disputedPoint": "موضع خلاف تجريبي",
+    "views": [
+      {
+        "id": "VIEW1",
+        "label": "الرأي الأول",
+        "summary": "ملخص تجريبي",
+        "evidenceIds": []
+      },
+      {
+        "id": "VIEW2",
+        "label": "الرأي الثاني",
+        "summary": "ملخص تجريبي",
+        "evidenceIds": []
+      }
+    ],
+    "confidentConclusion": null,
+    "unresolvedNote": "هذا Mock لا يمثل مادة شرعية حقيقية."
+  },
+  "referral": null,
+  "suggestedActions": [
+    "عرض أدلة كل رأي",
+    "العودة للنقاش"
+  ]
+}

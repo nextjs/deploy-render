@@ -1,0 +1,26 @@
+{
+  "responseId": "resp_demo_clarify",
+  "conversationId": "conv_demo_001",
+  "status": "clarification_required",
+  "message": "هل تقصد المعنى الأول أم المعنى الثاني؟",
+  "contentLevel": "B",
+  "route": "CLARIFY",
+  "citations": [],
+  "claims": [],
+  "dialogueState": {
+    "mainTopic": null,
+    "points": [],
+    "activePointId": null,
+    "resolvedPointIds": [],
+    "openPointIds": [],
+    "disputedPointIds": [],
+    "evidenceUsed": []
+  },
+  "discussionMap": {
+    "nodes": [],
+    "edges": []
+  },
+  "disagreement": null,
+  "referral": null,
+  "suggestedActions": []
+}

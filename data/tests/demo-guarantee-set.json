@@ -1,0 +1,12 @@
+{
+  "name": "Dorar demo guarantee set",
+  "version": 1,
+  "purpose": "Small deterministic corpus-coverage checks for high-value Arabic demo topics. Coverage means the local corpus contains at least one source record for the exact supplied query; it does not replace retrieval/evidence-gate tests.",
+  "scenarios": [
+    { "id": "demo-prayer", "query": "الصلاة", "expectedSourceId": "dorar-hadith-local" },
+    { "id": "demo-faith", "query": "الإيمان", "expectedSourceId": "dorar-hadith-local" },
+    { "id": "demo-zakat", "query": "الزكاة", "expectedSourceId": "dorar-hadith-local" },
+    { "id": "demo-fasting", "query": "الصيام", "expectedSourceId": "dorar-hadith-local" },
+    { "id": "demo-quran", "query": "القرآن", "expectedSourceId": "dorar-hadith-local" }
+  ]
+}

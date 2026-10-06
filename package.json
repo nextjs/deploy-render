@@ -1,25 +1,50 @@
 {
+  "name": "rashid-islamic-dialogue-platform",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "validate:mocks": "tsx scripts/validate-mocks.ts",
+    "test:db": "tsx --env-file=.env.local scripts/test-db.ts",
+    "test:retrieval": "tsx scripts/test-retrieval.ts",
+    "test:mcp": "tsx scripts/test-mcp.ts",
+    "test:hybrid-retrieval": "tsx scripts/test-hybrid-retrieval.ts",
+    "test:router": "tsx --env-file=.env.local scripts/test-router.ts",
+    "test:retrieval-hitk": "tsx scripts/test-retrieval-hitk.ts",
+    "test:dialogue": "tsx --env-file=.env.local scripts/test-dialogue.ts",
+    "test:claims": "tsx scripts/test-claims.ts",
+    "test:evidence-gate": "tsx scripts/test-evidence-gate.ts",
+    "test:chat-api": "tsx scripts/test-chat-api.ts",
+    "test:planner": "tsx scripts/test-planner.ts",
+    "test:writer": "tsx scripts/test-writer.ts",
+    "test:final-pipeline": "tsx scripts/test-final-pipeline.ts",
+    "test:pipeline:live": "node --env-file=.env.local --import tsx scripts/test-pipeline-live.ts",
+    "inspect:corpus": "node --import tsx scripts/inspect-dorar.ts",
+    "build:corpus": "node --import tsx scripts/build-corpus.ts",
+    "validate:corpus": "node --import tsx scripts/validate-corpus.ts",
+    "audit:corpus": "node --import tsx scripts/audit-corpus.ts",
+    "test:local-corpus": "node --import tsx scripts/test-local-corpus.ts",
+    "test:pipeline-report": "node --import tsx scripts/test-pipeline-report.ts"
   },
   "dependencies": {
-    "react": "19.0.0-rc-69d4b800-20241021",
-    "react-dom": "19.0.0-rc-69d4b800-20241021",
-    "next": "15.0.6"
+    "@google/genai": "2.24.0",
+    "@neondatabase/serverless": "1.2.0",
+    "@xyflow/react": "12.12.0",
+    "next": "15.0.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "npm:types-react@19.0.0-rc.1",
-      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-    }
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
   }
 }

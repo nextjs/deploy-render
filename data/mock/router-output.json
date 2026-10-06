@@ -1,0 +1,10 @@
+{
+  "queryLanguage": "ar",
+  "contentLevel": "B",
+  "route": "EXPLAIN",
+  "ambiguous": false,
+  "personalRuling": false,
+  "needs": ["definition", "evidence"],
+  "conceptIds": ["concept_demo"],
+  "clarificationQuestion": null
+}

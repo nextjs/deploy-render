@@ -1,42 +1,217 @@
-# Deploy Next.js to Render
+# راشد | RASHID
 
-This is a Next.js template which can be deployed to [Render](https://render.com).
+**راشد** منصة حوار إسلامي موثّق قائمة على الأدلة، ومصممة بالعربية أولاً مع دعم الإنجليزية.
 
-## Deploying to Render
+تهدف المنصة إلى مساعدة المستخدم على فهم الإسلام من خلال حوار منظم يمكن تتبع أدلته، مع دعم مناقشة الشبهات، والمناظرة المنظمة، وعرض الخلاف العلمي، والإحالة إلى المختص عند الحاجة.
 
-This template can be used to deploy your Next.js application as a Node.js server.
+> المشروع قيد التطوير ضمن نسخة MVP للهاكاثون.
 
-### Deploy in one click
+## فكرة المشروع
 
-1. Fork this repo.
-1. In your new repo, click the button below.
+راشد ليس مجرد Chatbot، ولا محرك فتاوى.
 
-<a href="https://render.com/deploy" referrerpolicy="no-referrer-when-downgrade" rel="nofollow">
-  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" />
-</a>
+يعتمد المشروع على **Evidence-Linked Dialogue Architecture**، بحيث يتتبع النظام جانبين معاً:
 
-Note: The button uses the `render.yaml` file in this repo to deploy your app. For more information about `render.yaml`, see [Render's guide](https://docs.render.com/infrastructure-as-code).
+1. **Dialogue State | حالة الحوار:** أين وصل النقاش؟ وما النقاط المحسومة والمفتوحة؟
+2. **Evidence Graph | شبكة الأدلة:** ما الدليل المرتبط بكل ادعاء؟ وما علاقة الأدلة بالآراء والمصادر؟
 
-### Deploy manually
+المسار الأساسي المقترح:
 
-1. Fork this repo.
-1. Create a new Web Service on Render.
-1. Give Render permission to access your new repo.
-1. Use the following values during Web Service creation.
+```text
+سؤال المستخدم
+→ Adaptive Router
+→ Retrieval
+→ Evidence Pack
+→ Atomic Claims
+→ Claim-Evidence Gate
+→ Dialogue Planner
+→ Writer
+→ Final Verification
+→ تحديث حالة الحوار
+→ الإجابة المنظمة
+```
 
-- Runtime: Node
-- Build Command: `pnpm install; pnpm build`
-- Start Command: `pnpm start`
+## مبادئ أساسية
 
-## Learn More
-To learn more about deploying Next.js, take a look at the following resources:
+- المحتوى الديني النهائي يعتمد فقط على المصادر المعتمدة في التحدي.
+- لا يظهر ادعاء ديني مهم دون دليل مرتبط به.
+- راشد لا يصدر فتوى شخصية مستقلة.
+- المسائل الخلافية تعرض بوضوح دون إخفاء الخلاف.
+- عند نقص الأدلة أو خروج السؤال عن الحدود، يستخدم النظام الامتناع أو الإحالة.
+- الواجهة عربية أولاً وRTL، مع دعم الإنجليزية.
+- راشد يدعم الحوار والمناظرة المنظمة، وليس مجرد سؤال وجواب.
 
-- [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying#self-hosting)
-- [Deploying Next.js on Render](https://docs.render.com/deploy-nextjs-app)
+## التقنيات الحالية
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- Zod
+- GitHub
+- Render
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ستضاف بقية الأدوات عند الحاجة، وليس لمجرد وجودها في الخطة.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## هيكل المشروع
+
+```text
+src/
+├── app/
+├── components/
+├── lib/
+│   ├── ai/
+│   ├── rag/
+│   ├── graphs/
+│   └── schemas/
+├── prompts/
+└── types/
+
+data/
+├── raw/
+├── normalized/
+├── processed/
+├── embeddings/
+├── mock/
+└── tests/
+
+scripts/
+docs/
+public/
+└── brand/
+```
+
+## التشغيل محلياً
+
+بعد Clone للمستودع:
+
+```bash
+npm install
+npm run dev
+```
+
+ثم افتح:
+
+```text
+http://localhost:3000
+```
+
+إذا كان المنفذ 3000 مستخدماً، يمكن تشغيل نسخة الإنتاج على منفذ آخر:
+
+```bash
+npm start -- -p 3001
+```
+
+## متغيرات البيئة
+
+انسخ:
+
+`.env.example`
+
+إلى ملف محلي باسم:
+
+`.env.local`
+
+ثم أضف القيم الحقيقية محلياً.
+
+**لا ترفع `.env.local` إلى GitHub.**
+
+## طريقة عمل الفريق
+
+- `main`: النسخة المستقرة.
+- `dev`: فرع الدمج والتطوير المشترك.
+- `feature/*`: فروع المهام المنفصلة.
+
+المسار المعتاد:
+
+```text
+main
+└── dev
+    ├── feature/router
+    ├── feature/retrieval
+    ├── feature/gui
+    └── ...
+```
+
+كل Feature تختبر محلياً، ثم ترفع عبر Pull Request إلى `dev`. بعد اكتمال نسخة مستقرة واختبارها، تدمج `dev` في `main`.
+
+## الاختبار الحالي
+
+تم التحقق من الأساس الحالي بنجاح عبر:
+
+```bash
+npm install
+npm run dev
+npm run build
+```
+
+قبل دمج أي تغيير كبير، يجب ألا يكسر:
+
+```bash
+npm run build
+```
+
+## النشر
+
+المسار المقترح للهاكاثون هو ربط المستودع بخدمة **Render Web Service**.
+
+Build Command:
+
+```bash
+npm install && npm run build
+```
+
+Start Command:
+
+```bash
+npm start
+```
+
+لا نعتمد على Render Blueprint دون مراجعة إعداداته أولاً.
+
+## حالة البيانات
+
+لم نثبت بعد استراتيجية إدخال corpus الديني النهائي.
+
+لذلك مجلدات البيانات موجودة حالياً كهيكل فقط، ولن نضيف مصادر دينية إلى النظام حتى يعتمد الفريق طريقة الجمع، والتوحيد، والتتبع، والتحقق.
+
+## وثائق المشروع
+
+راجع مجلد `docs/` من أجل:
+
+- `ARCHITECTURE.md`
+- `SOURCES.md`
+- `SYSTEM_INSTRUCTIONS.md`
+- `TESTING.md`
+
+---
+
+# English Summary
+
+**RASHID** is an Arabic-first, evidence-based Islamic dialogue platform for guided learning, structured debate, source inspection, scholarly disagreement handling, and safe referral.
+
+The project uses an **Evidence-Linked Dialogue Architecture** that connects dialogue state with evidence-backed claims.
+
+RASHID is not a generic chatbot or a fatwa engine. Religious claims must be grounded in the approved challenge corpus, and personalized rulings must follow the referral path.
+
+## Local Setup
+
+```bash
+npm install
+npm run dev
+```
+
+## Branches
+
+- `main`: stable version
+- `dev`: integration branch
+- `feature/*`: isolated feature work
+
+## Deployment
+
+The current deployment target is Render Web Service using:
+
+```bash
+npm install && npm run build
+npm start
+```

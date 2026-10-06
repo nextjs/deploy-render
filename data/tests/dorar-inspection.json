@@ -1,0 +1,10 @@
+{
+  "input": "data/raw/dorar/dorar_training_2026-10-05T14-34-09-951Z.jsonl",
+  "totalRecords": 2000,
+  "normalizedRecords": 2000,
+  "generatedChunks": 2000,
+  "rejectedRecords": 0,
+  "missingFieldCounts": {},
+  "duplicateKeys": [],
+  "encoding": "UTF-8"
+}

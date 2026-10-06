@@ -1,0 +1,33 @@
+{
+  "responseId": "resp_demo_referral",
+  "conversationId": "conv_demo_001",
+  "status": "referral",
+  "message": "هذه حالة تجريبية للإحالة إلى مختص.",
+  "contentLevel": "D",
+  "route": "REFERRAL",
+  "citations": [],
+  "claims": [],
+  "dialogueState": {
+    "mainTopic": "personal case demo",
+    "points": [],
+    "activePointId": null,
+    "resolvedPointIds": [],
+    "openPointIds": [],
+    "disputedPointIds": [],
+    "evidenceUsed": []
+  },
+  "discussionMap": {
+    "nodes": [],
+    "edges": []
+  },
+  "disagreement": null,
+  "referral": {
+    "reason": "personal_fatwa",
+    "message": "المسألة الشخصية تحتاج إلى مختص مؤهل.",
+    "safeGeneralInformation": "يمكن عرض معلومات عامة فقط.",
+    "specialistType": "عالم أو جهة شرعية مؤهلة"
+  },
+  "suggestedActions": [
+    "عرض معلومات عامة"
+  ]
+}

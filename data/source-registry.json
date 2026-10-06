@@ -1,0 +1,79 @@
+[
+  {
+    "sourceId": "dorar-hadith-local",
+    "sourceName": "Dorar.net Hadith",
+    "sourceType": "hadith",
+    "acquisitionMethod": "supplied JSONL dataset",
+    "language": "ar",
+    "recordCount": 2000,
+    "originalFormat": "JSONL",
+    "allowedDomain": "dorar.net",
+    "sourceUrl": "https://dorar.net",
+    "status": "active",
+    "normalizationMethod": "Dorar fields mapped to BaseSourceRecord; source-specific fields retained in metadata",
+    "chunkingRule": "one complete hadith record per semantic chunk",
+    "importantMetadata": [
+      "narrator",
+      "muhaddith",
+      "sourceBook",
+      "reference",
+      "grading",
+      "query",
+      "originalKey"
+    ],
+    "provenanceMethod": "raw JSONL line number + original key + supplied source/query metadata",
+    "scope": "curated local hadith subset; not a complete hadith library"
+  },
+  {
+    "sourceId": "approved-terminology-mvp",
+    "sourceName": "Islamic Terminology Encyclopedia",
+    "sourceType": "terminology",
+    "acquisitionMethod": "pending approved source payload/access",
+    "language": "ar",
+    "recordCount": 0,
+    "allowedDomain": "terminologyenc.com",
+    "sourceUrl": "https://terminologyenc.com",
+    "status": "planned",
+    "chunkingRule": "term + definition + explanation as one semantic unit",
+    "scope": "MVP terminology subset; no self-translated religious text"
+  },
+  {
+    "sourceId": "approved-dawah-mvp",
+    "sourceName": "Byenah / approved Da'wah resources",
+    "sourceType": "other_approved",
+    "acquisitionMethod": "pending approved source payload/access",
+    "language": "ar",
+    "recordCount": 0,
+    "allowedDomain": "byenah.com",
+    "sourceUrl": "https://byenah.com",
+    "status": "planned",
+    "chunkingRule": "one coherent topic unit",
+    "scope": "MVP introductory Islam/Da'wah subset; preserve official language variants only"
+  },
+  {
+    "sourceId": "approved-misconceptions-mvp",
+    "sourceName": "Byenah / approved misconception and FAQ resources",
+    "sourceType": "misconception",
+    "acquisitionMethod": "pending approved source payload/access",
+    "language": "ar",
+    "recordCount": 0,
+    "allowedDomain": "byenah.com",
+    "sourceUrl": "https://byenah.com",
+    "status": "planned",
+    "chunkingRule": "question + answer as one semantic unit",
+    "scope": "MVP misconceptions/common-questions subset; no generated answers"
+  },
+  {
+    "sourceId": "approved-islamhouse-mvp",
+    "sourceName": "IslamHouse approved library content",
+    "sourceType": "other_approved",
+    "acquisitionMethod": "pending approved source payload/access",
+    "language": "ar",
+    "recordCount": 0,
+    "allowedDomain": "islamhouse.com",
+    "sourceUrl": "https://islamhouse.com",
+    "status": "planned",
+    "chunkingRule": "one coherent article/book section unit",
+    "scope": "Optional approved Da'wah/library cache when a specific high-value item is selected"
+  }
+]

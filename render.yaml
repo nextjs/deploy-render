@@ -1,10 +1,10 @@
 services:
   - type: web
-    name: next-js
+    name: rashid-islamic-dialogue-platform
     runtime: node
     plan: free
-    buildCommand: pnpm install; pnpm build
-    startCommand: pnpm start
+    buildCommand: npm install && npm run build
+    startCommand: npm start
     autoDeploy: false
     envVars:
       - key: PORT

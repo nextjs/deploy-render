@@ -1,0 +1,68 @@
+[
+  {
+    "id": "retrieval-001",
+    "question": "What is Tawhid?",
+    "queryLanguage": "en",
+    "route": "EXPLAIN",
+    "contentLevel": "B",
+    "sourceTypes": ["terminology"],
+    "expectedSourceTypes": ["terminology"],
+    "expectedLocatorContains": ["TEST-FIXTURE/TERMINOLOGY/001"],
+    "topK": 5
+  },
+  {
+    "id": "retrieval-002",
+    "question": "What does the Quran say about prayer?",
+    "queryLanguage": "en",
+    "route": "LOOKUP",
+    "contentLevel": "A",
+    "sourceTypes": ["quran"],
+    "expectedSourceTypes": ["quran"],
+    "expectedLocatorContains": ["TEST-FIXTURE/QURAN/002"],
+    "topK": 5
+  },
+  {
+    "id": "retrieval-003",
+    "question": "Find a hadith about good character.",
+    "queryLanguage": "en",
+    "route": "LOOKUP",
+    "contentLevel": "A",
+    "sourceTypes": ["hadith"],
+    "expectedSourceTypes": ["hadith"],
+    "expectedLocatorContains": ["TEST-FIXTURE/HADITH/003"],
+    "topK": 5
+  },
+  {
+    "id": "retrieval-004",
+    "question": "Explain worship in simple terms.",
+    "queryLanguage": "en",
+    "route": "EXPLAIN",
+    "contentLevel": "B",
+    "sourceTypes": [],
+    "expectedSourceTypes": ["quran"],
+    "expectedLocatorContains": ["TEST-FIXTURE/QURAN/002"],
+    "topK": 5
+  },
+  {
+    "id": "retrieval-005",
+    "question": "What is Tawhid?",
+    "queryLanguage": "en",
+    "route": "EXPLAIN",
+    "contentLevel": "B",
+    "sourceTypes": [],
+    "expectedSourceTypes": ["terminology"],
+    "expectedLocatorContains": ["TEST-FIXTURE/TERMINOLOGY/001"],
+    "topK": 5
+  },
+  {
+    "id": "retrieval-006",
+    "question": "What is the TEST-UNRELATED-XYZ topic?",
+    "queryLanguage": "en",
+    "route": "EXPLAIN",
+    "contentLevel": "B",
+    "sourceTypes": [],
+    "expectedSourceTypes": [],
+    "expectedLocatorContains": [],
+    "topK": 5
+  }
+]

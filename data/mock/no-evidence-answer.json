@@ -1,0 +1,28 @@
+{
+  "responseId": "resp_demo_no_evidence",
+  "conversationId": "conv_demo_001",
+  "status": "insufficient_evidence",
+  "message": "تعذر التحقق من إجابة موثوقة من الأدلة المتاحة.",
+  "contentLevel": "B",
+  "route": "EXPLAIN",
+  "citations": [],
+  "claims": [],
+  "dialogueState": {
+    "mainTopic": "demo",
+    "points": [],
+    "activePointId": null,
+    "resolvedPointIds": [],
+    "openPointIds": [],
+    "disputedPointIds": [],
+    "evidenceUsed": []
+  },
+  "discussionMap": {
+    "nodes": [],
+    "edges": []
+  },
+  "disagreement": null,
+  "referral": null,
+  "suggestedActions": [
+    "إعادة صياغة السؤال"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "responseId": "resp_demo_001",
+  "conversationId": "conv_demo_001",
+  "status": "ok",
+  "message": "هذه إجابة تجريبية لربط الواجهة بعقد البيانات فقط.",
+  "contentLevel": "B",
+  "route": "EXPLAIN",
+  "citations": [
+    {
+      "id": "E001",
+      "chunkId": "CHK001",
+      "recordId": "REC001",
+      "sourceId": "SRC001",
+      "sourceType": "terminology",
+      "sourceName": "مصدر معتمد تجريبي",
+      "text": "نص تجريبي غير مخصص للاستخدام كإجابة دينية حقيقية.",
+      "locator": "DEMO-001",
+      "relation": "DEFINES",
+      "viewId": null,
+      "language": "ar"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C001",
+      "text": "ادعاء تجريبي لعرض بنية الواجهة.",
+      "evidenceIds": [
+        "E001"
+      ],
+      "status": "SUPPORTED"
+    }
+  ],
+  "dialogueState": {
+    "mainTopic": "demo",
+    "points": [
+      {
+        "id": "P001",
+        "label": "النقطة الحالية",
+        "kind": "concept",
+        "status": "active",
+        "parentId": null
+      }
+    ],
+    "activePointId": "P001",
+    "resolvedPointIds": [],
+    "openPointIds": [],
+    "disputedPointIds": [],
+    "evidenceUsed": [
+      "E001"
+    ]
+  },
+  "discussionMap": {
+    "nodes": [
+      {
+        "id": "N001",
+        "label": "السؤال التجريبي",
+        "kind": "main_question",
+        "evidenceIds": []
+      },
+      {
+        "id": "N002",
+        "label": "النقطة الحالية",
+        "kind": "active_point",
+        "status": "active",
+        "evidenceIds": [
+          "E001"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "EDGE001",
+        "source": "N001",
+        "target": "N002",
+        "relation": "LEADS_TO"
+      }
+    ]
+  },
+  "disagreement": null,
+  "referral": null,
+  "suggestedActions": [
+    "عرض الدليل",
+    "خريطة النقاش"
+  ]
+}

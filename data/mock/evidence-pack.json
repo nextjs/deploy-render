@@ -1,0 +1,18 @@
+{
+  "question": "سؤال تجريبي",
+  "evidence": [
+    {
+      "id": "E001",
+      "chunkId": "CHK001",
+      "recordId": "REC001",
+      "sourceId": "SRC001",
+      "sourceType": "terminology",
+      "sourceName": "مصدر معتمد تجريبي",
+      "text": "نص تجريبي للتحقق من العقد فقط.",
+      "locator": "DEMO-001",
+      "relation": "DEFINES",
+      "viewId": null,
+      "language": "ar"
+    }
+  ]
+}
